@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vinoth Kumar V – Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0a0f1e;--navy2:#111827;--accent:#4f8ef7;--accent2:#7c5cbf;
+  --light:#f0f4ff;--muted:#8892a4;--card:#161d2e;--border:#222d42;
+  --white:#fff;--green:#22c55e;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden}
+
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(10,15,30,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;letter-spacing:-0.02em}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--white)}
+
+.hero{min-height:100vh;display:flex;align-items:center;padding:80px 2rem 4rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(79,142,247,0.12) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(124,92,191,0.1) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(79,142,247,0.1);border:1px solid rgba(79,142,247,0.3);border-radius:100px;padding:6px 16px;font-size:0.78rem;color:var(--accent);font-weight:500;letter-spacing:0.05em;margin-bottom:1.5rem}
+.dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:blink 1.5s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+h1{font-family:'Syne',sans-serif;font-size:clamp(2.4rem,5vw,3.8rem);font-weight:800;line-height:1.1;letter-spacing:-0.03em;margin-bottom:1rem}
+h1 span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{color:var(--muted);font-size:1.05rem;line-height:1.7;margin-bottom:2rem;font-weight:300}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:var(--accent);color:var(--white);padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:500;font-size:0.9rem;transition:opacity 0.2s,transform 0.2s}
+.btn-primary:hover{opacity:0.85;transform:translateY(-1px)}
+.btn-outline{border:1px solid var(--border);color:var(--white);padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:500;font-size:0.9rem;transition:border-color 0.2s,transform 0.2s}
+.btn-outline:hover{border-color:var(--accent);transform:translateY(-1px)}
+.hero-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:2rem;position:relative;overflow:hidden}
+.hero-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.avatar-ring{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;margin-bottom:1.2rem}
+.info-row{display:flex;align-items:center;gap:10px;margin-bottom:0.8rem;font-size:0.88rem;color:var(--muted)}
+.info-row svg{flex-shrink:0;color:var(--accent)}
+.info-row strong{color:var(--white);font-weight:500}
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border)}
+.stat{text-align:center}
+.stat-num{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;color:var(--accent)}
+.stat-lbl{font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-top:2px}
+
+section{padding:5rem 2rem}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-tag{font-size:0.78rem;color:var(--accent);font-weight:500;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.6rem}
+.section-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:0.8rem}
+.section-line{width:48px;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:2px;margin-bottom:2.5rem}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.about-text{color:var(--muted);font-size:0.95rem;line-height:1.8;font-weight:300}
+.about-text p{margin-bottom:1rem}
+.edu-list{list-style:none}
+.edu-item{display:flex;gap:1rem;margin-bottom:1.2rem;padding:1rem 1.2rem;background:var(--card);border:1px solid var(--border);border-radius:12px;transition:border-color 0.2s}
+.edu-item:hover{border-color:rgba(79,142,247,0.4)}
+.edu-icon{width:40px;height:40px;border-radius:10px;background:rgba(79,142,247,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.edu-body p{font-size:0.88rem;color:var(--muted);margin-top:2px}
+.edu-body strong{font-size:0.92rem;font-weight:500}
+
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.2rem}
+.skill-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.2rem 1.4rem;transition:border-color 0.2s,transform 0.2s}
+.skill-card:hover{border-color:rgba(79,142,247,0.4);transform:translateY(-2px)}
+.skill-cat{font-size:0.75rem;color:var(--accent);font-weight:500;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.6rem}
+.skill-tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:0.78rem;color:var(--muted);font-weight:400}
+
+.project-card{background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:border-color 0.2s,transform 0.2s}
+.project-card:hover{border-color:rgba(79,142,247,0.4);transform:translateY(-3px)}
+.project-header{height:160px;background:linear-gradient(135deg,rgba(79,142,247,0.15),rgba(124,92,191,0.15));display:flex;align-items:center;justify-content:center}
+.project-icon{width:64px;height:64px;border-radius:16px;background:rgba(79,142,247,0.2);border:1px solid rgba(79,142,247,0.3);display:flex;align-items:center;justify-content:center}
+.project-body{padding:1.5rem}
+.project-body h3{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:0.6rem}
+.project-body p{color:var(--muted);font-size:0.88rem;line-height:1.7;margin-bottom:1rem}
+.tech-tags{display:flex;flex-wrap:wrap;gap:6px}
+.tech-tag{background:rgba(79,142,247,0.1);border:1px solid rgba(79,142,247,0.25);border-radius:6px;padding:3px 10px;font-size:0.76rem;color:var(--accent)}
+
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.contact-info p{color:var(--muted);font-size:0.95rem;line-height:1.7;margin-bottom:1.5rem}
+.contact-item{display:flex;align-items:center;gap:12px;margin-bottom:1rem;padding:1rem;background:var(--card);border:1px solid var(--border);border-radius:12px}
+.contact-icon{width:38px;height:38px;border-radius:10px;background:rgba(79,142,247,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-item strong{display:block;font-size:0.8rem;color:var(--muted);font-weight:400;text-transform:uppercase;letter-spacing:0.05em}
+.contact-item span{font-size:0.9rem;color:var(--white)}
+.soft-skills{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.soft-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1rem;display:flex;align-items:center;gap:10px;font-size:0.88rem;font-weight:500}
+.soft-dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));flex-shrink:0}
+
+footer{padding:2rem;text-align:center;color:var(--muted);font-size:0.82rem;border-top:1px solid var(--border)}
+footer span{color:var(--accent)}
+
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
+.fade-in.visible{opacity:1;transform:none}
+
+@media(max-width:768px){
+  .hero-inner,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .hero-card{display:none}
+  .skills-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo">V<span>K</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag"><span class="dot"></span> Available for opportunities</div>
+      <h1>Hi, I'm <span>Vinoth Kumar V</span></h1>
+      <p class="hero-sub">BCA Graduate & MCA Student passionate about building web applications and solving real-world problems with technology.</p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary">View My Work</a>
+        <a href="#contact" class="btn-outline">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-card fade-in">
+      <div class="avatar-ring">VK</div>
+      <div class="info-row">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Chennai, Tamil Nadu</span>
+      </div>
+      <div class="info-row">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>vinoth122840@gmail.com</span>
+      </div>
+      <div class="info-row">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <span>+91 6385101346</span>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><div class="stat-num">3+</div><div class="stat-lbl">Languages</div></div>
+        <div class="stat"><div class="stat-num">MCA</div><div class="stat-lbl">Pursuing</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-inner fade-in">
+    <p class="section-tag">Who I am</p>
+    <h2 class="section-title">About Me</h2>
+    <div class="section-line"></div>
+    <div class="about-grid">
+      <div>
+        <div class="about-text">
+          <p>I'm a motivated BCA graduate currently pursuing my MCA at S.A. Engineering College. I have a strong interest in the IT field and am passionate about web development and building practical solutions.</p>
+          <p>During my BCA at Vel Tech Ranga Sanku Arts College, I developed hands-on experience with web technologies and built a Restaurant Management System as my final project.</p>
+          <p>I'm fluent in English and Tamil, and I'm always eager to take on new challenges and grow professionally.</p>
+        </div>
+      </div>
+      <div>
+        <ul class="edu-list">
+          <li class="edu-item">
+            <div class="edu-icon">
+              <svg width="20" height="20" fill="none" stroke="#4f8ef7" stroke-width="2" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 4 3 6 3s6-1 6-3v-5"/></svg>
+            </div>
+            <div class="edu-body"><strong>MCA – Currently Pursuing</strong><p>S.A. Engineering College</p></div>
+          </li>
+          <li class="edu-item">
+            <div class="edu-icon">
+              <svg width="20" height="20" fill="none" stroke="#4f8ef7" stroke-width="2" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 4 3 6 3s6-1 6-3v-5"/></svg>
+            </div>
+            <div class="edu-body"><strong>BCA – 60.4% (2024)</strong><p>Vel Tech Ranga Sanku Arts College, Madras University</p></div>
+          </li>
+          <li class="edu-item">
+            <div class="edu-icon">
+              <svg width="20" height="20" fill="none" stroke="#4f8ef7" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <div class="edu-body"><strong>HSC – 70.5%</strong><p>Nazareth Matriculation Higher Secondary School</p></div>
+          </li>
+          <li class="edu-item">
+            <div class="edu-icon">
+              <svg width="20" height="20" fill="none" stroke="#4f8ef7" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <div class="edu-body"><strong>SSLC – 58%</strong><p>Nazareth Matriculation Higher Secondary School</p></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" style="background:rgba(255,255,255,0.02)">
+  <div class="section-inner fade-in">
+    <p class="section-tag">What I know</p>
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="section-line"></div>
+    <div class="skills-grid">
+      <div class="skill-card"><p class="skill-cat">Programming Languages</p><div class="skill-tags"><span class="tag">C</span><span class="tag">C++</span><span class="tag">Java</span><span class="tag">Python (Basic)</span></div></div>
+      <div class="skill-card"><p class="skill-cat">Web Technologies</p><div class="skill-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">PHP</span></div></div>
+      <div class="skill-card"><p class="skill-cat">Database</p><div class="skill-tags"><span class="tag">MySQL</span></div></div>
+      <div class="skill-card"><p class="skill-cat">Tools & Software</p><div class="skill-tags"><span class="tag">MS Office</span><span class="tag">Power BI</span></div></div>
+      <div class="skill-card"><p class="skill-cat">Operating Systems</p><div class="skill-tags"><span class="tag">Windows</span><span class="tag">Linux</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-inner fade-in">
+    <p class="section-tag">What I've built</p>
+    <h2 class="section-title">Academic Project</h2>
+    <div class="section-line"></div>
+    <div style="max-width:480px">
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">
+            <svg width="30" height="30" fill="none" stroke="#4f8ef7" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 2h18v4H3zM3 10h18v4H3zM3 18h18v4H3"/><path d="M7 4v0M7 12v0M7 20v0"/></svg>
+          </div>
+        </div>
+        <div class="project-body">
+          <h3>Restaurant Management System</h3>
+          <p>A web-based application to manage orders, billing, menu details, and customer records efficiently.</p>
+          <div class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">PHP</span><span class="tech-tag">MySQL</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="background:rgba(255,255,255,0.02)">
+  <div class="section-inner fade-in">
+    <p class="section-tag">Let's connect</p>
+    <h2 class="section-title">Contact Me</h2>
+    <div class="section-line"></div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p>I'm actively looking for internship and job opportunities in the IT field. Feel free to reach out!</p>
+        <div class="contact-item">
+          <div class="contact-icon"><svg width="18" height="18" fill="none" stroke="#4f8ef7" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><strong>Email</strong><span>vinoth122840@gmail.com</span></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><svg width="18" height="18" fill="none" stroke="#4f8ef7" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div><strong>Phone</strong><span>+91 6385101346</span></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><svg width="18" height="18" fill="none" stroke="#4f8ef7" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><strong>Location</strong><span>Chennai, Tamil Nadu</span></div>
+        </div>
+      </div>
+      <div>
+        <p style="font-family:'Syne',sans-serif;font-weight:600;font-size:1rem;margin-bottom:1.2rem">Soft Skills</p>
+        <div class="soft-skills">
+          <div class="soft-card"><span class="soft-dot"></span>Communication</div>
+          <div class="soft-card"><span class="soft-dot"></span>Teamwork</div>
+          <div class="soft-card"><span class="soft-dot"></span>Quick Learner</div>
+          <div class="soft-card"><span class="soft-dot"></span>Problem Solving</div>
+        </div>
+        <div style="margin-top:1.5rem;padding:1.2rem;background:var(--card);border:1px solid var(--border);border-radius:14px">
+          <p style="font-size:0.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;font-weight:500;margin-bottom:0.6rem">Languages</p>
+          <div style="display:flex;gap:8px"><span class="tag">English</span><span class="tag">Tamil</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2024 <span>Vinoth Kumar V</span>. All rights reserved.</p>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.12});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
